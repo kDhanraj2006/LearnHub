@@ -697,7 +697,7 @@ if (
 // ========================================
 
 fetch(
-    "http://localhost:8082/api/courses"
+    "/api/courses"
 )
 
     .then(
