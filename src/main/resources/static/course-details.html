@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        LearnHub - Course Details
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="my-courses.html">
+                My Courses
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Course Details -->
+    <section class="featured">
+
+        <h1 id="courseTitle">
+            Course Details
+        </h1>
+
+        <br>
+
+
+        <div class="course-card">
+
+            <h3>
+                About This Course
+            </h3>
+
+            <p id="courseDescription"></p>
+
+            <br>
+
+
+            <h3>
+                Course Topics
+            </h3>
+
+            <br>
+
+
+            <div id="courseTopics"></div>
+
+            <br>
+
+
+            <a
+                href="#"
+                class="btn"
+                id="enrollButton">
+
+                Enroll Now
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+	<script>
+	document.getElementById("enrollButton").addEventListener("click", async function(event) {
+
+	    event.preventDefault();
+
+	    const email = localStorage.getItem("loggedInEmail");
+
+	    if (!email) {
+	        alert("Please login first.");
+	        window.location.href = "login.html";
+	        return;
+	    }
+
+	    const courseId = new URLSearchParams(window.location.search).get("id");
+
+	    const courseTitleElement = document.getElementById("courseTitle");
+
+	    const courseTitle = courseTitleElement
+	        ? courseTitleElement.textContent
+	        : "Unknown Course";
+
+	    try {
+
+	        const response = await fetch("/api/enroll", {
+
+	            method: "POST",
+
+	            headers: {
+	                "Content-Type": "application/json"
+	            },
+
+	            body: JSON.stringify({
+	                email: email,
+	                courseId: courseId,
+	                courseTitle: courseTitle
+	            })
+
+	        });
+
+	        const result = await response.text();
+
+	        if (response.ok) {
+
+	            alert("Enrollment successful!");
+
+	            window.location.href = "my-courses.html";
+
+	        } else {
+
+	            alert("Enrollment failed: " + result);
+
+	        }
+
+	    } catch (error) {
+
+	        console.error(error);
+
+	        alert("Server connection failed.");
+
+	    }
+
+	});
+	</script>
+
+</body>
+
+</html>

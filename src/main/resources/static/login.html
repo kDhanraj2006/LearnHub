@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnHub - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="courses.html">
+                    Courses
+                </a>
+            </li>
+
+            <li>
+                <a href="register.html">
+                    Register
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+<section class="auth-section">
+
+    <div class="auth-card">
+
+        <h2>Welcome Back</h2>
+
+        <p class="auth-subtitle">
+            Login to continue learning
+        </p>
+
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit" class="auth-button">
+                Login
+            </button>
+
+        </form>
+
+
+        <p id="loginMessage" class="auth-message"></p>
+
+
+        <p class="auth-footer">
+
+            Don't have an account?
+
+            <a href="register.html">
+                Register
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>

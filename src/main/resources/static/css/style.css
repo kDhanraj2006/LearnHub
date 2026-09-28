@@ -1,0 +1,733 @@
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f5f7fb;
+
+    color: #222;
+
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 50px;
+
+    background-color: #1e293b;
+
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: white;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 16px;
+
+}
+
+
+.nav-links a:hover {
+
+    color: #60a5fa;
+
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    min-height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hero-content p {
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.btn {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    margin-top: 15px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+.btn:hover {
+
+    background-color: #1d4ed8;
+
+}
+
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+.featured {
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+}
+
+
+.featured h1 {
+
+    font-size: 32px;
+
+}
+
+
+.featured h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ========================================
+   COURSE CONTAINER
+======================================== */
+
+.course-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* ========================================
+   COURSE CARD
+======================================== */
+
+.course-card {
+
+    width: 280px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.1);
+
+    text-align: left;
+
+}
+
+
+.course-card h3 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.course-card p {
+
+    line-height: 1.6;
+
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search-box {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+#searchInput {
+
+    width: 300px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+#searchInput:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+/* ========================================
+   LESSONS
+======================================== */
+
+.lesson {
+
+    margin: 12px 0;
+
+    padding: 14px;
+
+    background-color: #f1f5f9;
+
+    border-radius: 8px;
+
+}
+
+
+.lesson input {
+
+    margin-right: 10px;
+
+    width: 16px;
+
+    height: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.lesson label {
+
+    cursor: pointer;
+
+}
+
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.progress-box {
+
+    width: 100%;
+
+    height: 20px;
+
+    background-color: #ddd;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+#progressBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background-color: #2563eb;
+
+    transition:
+        width 0.3s ease;
+
+}
+
+
+/* ========================================
+   COMPLETION MESSAGE
+======================================== */
+
+.completion-message {
+
+    display: none;
+
+    max-width: 500px;
+
+    margin: 20px auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+
+}
+
+
+.completion-message h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.completion-message p {
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+
+    }
+
+
+    .nav-links {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .course-card {
+
+        width: 100%;
+
+        max-width: 350px;
+
+    }
+	
+	.course-card {
+	    width: 280px;
+	    padding: 25px;
+	    background-color: white;
+	    border-radius: 10px;
+	    box-shadow:
+	        0 4px 12px
+	        rgba(0, 0, 0, 0.1);
+	    text-align: left;
+
+	    transition: 0.3s ease;
+	}
+
+	.course-card:hover {
+	    transform: translateY(-5px);
+	    box-shadow:
+	        0 8px 20px
+	        rgba(0, 0, 0, 0.15);
+	}
+
+
+    #searchInput {
+
+        width: 100%;
+
+        max-width: 350px;
+
+    }
+
+}
+
+/* ========================================
+   LEARNING PAGE
+======================================== */
+
+.learning-card {
+    max-width: 800px;
+    margin: 25px auto;
+    text-align: left;
+}
+
+
+
+/* ========================================
+   DUMMY VIDEO PLAYER
+======================================== */
+
+.dummy-video {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #111827;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-screen {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(135deg, #111827, #334155);
+    text-align: center;
+}
+
+.play-button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.play-button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.video-screen h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.video-screen p {
+    color: #cbd5e1;
+}
+
+.video-controls {
+    height: 55px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.video-progress {
+    flex: 1;
+    height: 6px;
+    background-color: #475569;
+    border-radius: 5px;
+}
+
+#videoProgress {
+    width: 0%;
+    height: 100%;
+    background-color: #2563eb;
+    border-radius: 5px;
+}
+
+
+/* =================================
+   LOGIN & REGISTER
+   ================================= */
+
+.auth-section {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background-color: #f5f7fb;
+}
+
+
+.auth-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.auth-card h2 {
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+    color: #1e293b;
+}
+
+
+.auth-subtitle {
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 30px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+
+.auth-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.auth-button:hover {
+    background-color: #1d4ed8;
+}
+
+
+.auth-message {
+    text-align: center;
+
+    margin-top: 18px;
+
+    font-size: 14px;
+}
+
+
+.auth-message.success {
+    color: #16a34a;
+}
+
+
+.auth-message.error {
+    color: #dc2626;
+}
+
+
+.auth-footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #64748b;
+}
+
+
+.auth-footer a {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+    .auth-card h2 {
+        font-size: 25px;
+    }
+
+}

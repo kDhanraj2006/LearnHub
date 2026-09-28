@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnHub - Learning</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="my-courses.html">
+                My Courses
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= LEARNING SECTION ================= -->
+
+    <section class="featured">
+
+        <h1 id="learningTitle">
+            Learning
+        </h1>
+
+
+        <!-- ================= DUMMY VIDEO ================= -->
+
+        <div class="dummy-video">
+
+            <div class="video-screen">
+
+                <button
+                    class="play-button"
+                    onclick="playDummyVideo()">
+
+                    &#9654;
+
+                </button>
+
+                <h3 id="videoTitle">
+                    Course Introduction
+                </h3>
+
+                <p id="videoStatus">
+                    Click Play to start lesson
+                </p>
+
+            </div>
+
+
+            <!-- VIDEO CONTROLS -->
+
+            <div class="video-controls">
+
+                <span>
+                    &#9654;
+                </span>
+
+                <div class="video-progress">
+
+                    <div id="videoProgress"></div>
+
+                </div>
+
+                <span>
+                    &#128266;
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= COURSE PROGRESS ================= -->
+
+        <div
+            class="course-card learning-card">
+
+            <h2>
+                Course Progress
+            </h2>
+
+            <p id="progressText">
+                Progress: 0%
+            </p>
+
+            <br>
+
+            <div class="progress-box">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= LESSONS ================= -->
+
+        <div
+            class="course-card learning-card">
+
+            <h2>
+                Lessons
+            </h2>
+
+            <br>
+
+            <div id="lessonsContainer">
+
+                Loading lessons...
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= COMPLETION ================= -->
+
+        <div
+            id="completionMessage"
+            class="completion-message">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

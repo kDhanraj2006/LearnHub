@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>LearnHub - Courses</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="my-courses.html">
+                My Courses
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Courses -->
+    <section class="featured">
+
+        <h1>
+            Our Courses
+        </h1>
+
+        <br>
+
+
+        <!-- Search -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search courses...">
+
+        </div>
+
+        <br>
+
+
+        <!-- Course Cards -->
+        <div
+            class="course-container"
+            id="courseContainer">
+
+
+            <div
+                class="course-card"
+                data-course="java full stack">
+
+                <h3>
+                    Java Full Stack
+                </h3>
+
+                <p>
+                    Learn Java, HTML, CSS,
+                    JavaScript and MySQL.
+                </p>
+
+                <a
+                    href="course-details.html?course=java"
+                    class="btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+
+            <div
+                class="course-card"
+                data-course="python programming">
+
+                <h3>
+                    Python Programming
+                </h3>
+
+                <p>
+                    Learn Python programming
+                    from basic concepts.
+                </p>
+
+                <a
+                    href="course-details.html?course=python"
+                    class="btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+
+            <div
+                class="course-card"
+                data-course="web development">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Learn HTML, CSS and
+                    JavaScript.
+                </p>
+
+                <a
+                    href="course-details.html?course=web"
+                    class="btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <p
+            id="noResult"
+            style="display: none;">
+
+            No courses found.
+
+        </p>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
