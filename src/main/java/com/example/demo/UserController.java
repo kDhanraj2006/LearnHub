@@ -1,22 +1,18 @@
 package com.example.demo;
 
 import java.util.Map;
-import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin
 public class UserController {
 
-    private final JdbcTemplate jdbcTemplate;
-
-    public UserController(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     // REGISTER
     @PostMapping("/api/register")
@@ -36,6 +32,7 @@ public class UserController {
         return "Registration successful";
     }
 
+    // LOGIN
     @PostMapping("/api/login")
     public String login(@RequestBody Map<String, String> user) {
 
@@ -43,22 +40,22 @@ public class UserController {
         String password = user.get("password");
 
         String sql = """
-                SELECT 1
+                SELECT COUNT(*)
                 FROM users
                 WHERE email = ? AND password = ?
-                LIMIT 1
                 """;
 
-        List<Integer> result = jdbcTemplate.query(
+        Integer count = jdbcTemplate.queryForObject(
                 sql,
-                (rs, rowNum) -> rs.getInt(1),
+                Integer.class,
                 email,
                 password
         );
 
-        if (!result.isEmpty()) {
+        if (count != null && count > 0) {
             return "Login successful";
         }
 
         return "Invalid email or password";
     }
+}
