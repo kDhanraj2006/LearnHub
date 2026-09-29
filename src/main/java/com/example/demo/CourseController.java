@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RestController
 public class CourseController {
 
-    // 1. Cources load aagum API
+    // 1. Courses edupadharkana API
     @GetMapping("/api/courses")
     public List<Map<String, Object>> getCourses() {
         return List.of(
@@ -22,22 +22,13 @@ public class CourseController {
         );
     }
 
-    // 2. Login-ai bypass seiyum API (500 Error-ai seri seiya)
+    // 2. Login-ai bypass seiyum API
     @PostMapping("/api/login")
     public Map<String, Object> login(@RequestBody Map<String, String> loginData) {
         return Map.of(
             "status", "success",
             "message", "Login Successful",
             "user", Map.of("email", loginData.get("email"), "role", "student")
-        );
-    }
-
-    // 3. Register-aiyum bypass seiyum API (Register error-ai thavirka)
-    @PostMapping("/api/register")
-    public Map<String, Object> register(@RequestBody Map<String, Object> registerData) {
-        return Map.of(
-            "status", "success",
-            "message", "Registration Successful"
         );
     }
 }
