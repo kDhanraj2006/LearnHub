@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import java.util.Map;
-
+import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,16 +42,21 @@ public class UserController {
         String email = user.get("email");
         String password = user.get("password");
 
-        String sql = "SELECT COUNT(*) FROM users WHERE email = ? AND password = ?";
+        String sql = """
+                SELECT 1
+                FROM users
+                WHERE email = ? AND password = ?
+                LIMIT 1
+                """;
 
-        Long count = jdbcTemplate.queryForObject(
+        List<Integer> result = jdbcTemplate.query(
                 sql,
-                Long.class,
+                (rs, rowNum) -> rs.getInt(1),
                 email,
                 password
         );
 
-        if (count != null && count > 0) {
+        if (!result.isEmpty()) {
             return "Login successful";
         }
 
