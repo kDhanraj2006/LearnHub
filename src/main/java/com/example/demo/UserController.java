@@ -36,7 +36,6 @@ public class UserController {
         return "Registration successful";
     }
 
-    // LOGIN
     @PostMapping("/api/login")
     public String login(@RequestBody Map<String, String> user) {
 
@@ -45,9 +44,9 @@ public class UserController {
 
         String sql = "SELECT COUNT(*) FROM users WHERE email = ? AND password = ?";
 
-        Integer count = jdbcTemplate.queryForObject(
+        Long count = jdbcTemplate.queryForObject(
                 sql,
-                Integer.class,
+                Long.class,
                 email,
                 password
         );
@@ -58,4 +57,3 @@ public class UserController {
 
         return "Invalid email or password";
     }
-}
